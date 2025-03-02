@@ -47,14 +47,14 @@ const Stopwatch = () => {
         const seconds = Math.floor(time  / (1000) % 60  );
         let string = "";
         if(seconds < 10) string = "0";
-        return `${minutes}.${string}${seconds}`
+        return `${minutes}:${string}${seconds}`;
     }
     
     return (
         <div>
             <h1>Stopwatch</h1>
             <br/>
-            <p>{timeDisplay()}</p>
+            <p>Time: {timeDisplay()}</p>
             {!isRunning ? <button onClick={start}>Start</button> : <button onClick={stop}>Stop</button>}
             <button onClick={reset}>Reset</button>
         </div>
